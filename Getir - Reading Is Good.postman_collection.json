@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "d1305b97-7857-465f-be1e-104a08366a41",
+		"name": "Getir - Reading Is Good",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"goksenliozgun12@gmail.com\",\r\n    \"name\": \"Özgün\",\r\n    \"password\": \"123123\",\r\n    \"role\": [\"ROLE_ADMIN\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/account/sign-up",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"account",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"goksenliozgun12@gmail.com\",\r\n    \"password\": \"123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/account/sign-in",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"account",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiYXV0aCI6W10sImlhdCI6MTY0NDkyNTA0NywiZXhwIjoxNjQ0OTI4MDQ3fQ.FeD2vXShUzC4qBchsi1RuAAVeWGi3Vo8334avo0e8QY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/account/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"account",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Add Product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnb2tzZW5saW96Z3VuMTJAZ21haWwuY29tIiwiYXV0aCI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNjQ1MDEyMjQxLCJleHAiOjE2NDUwMTUyNDF9.yqk0t51g0nVmbN1rMVdo1syRH4wl_Cl3p7crl4TDF-Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Kaşağı\",\r\n    \"author\": \"Ömer Seyfettin\",\r\n    \"publishYear\": \"1950\",\r\n    \"price\": 5.50,\r\n    \"stock\": 25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Stock",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnb2tzZW5saW96Z3VuMTJAZ21haWwuY29tIiwiYXV0aCI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNjQ0OTY3NDQyLCJleHAiOjE2NDQ5NzA0NDJ9.1EgqU6XqFYtLvYmYbcl-8i_1kNefTjY1BgI9fGURaro",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stock\": \"55\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Add Customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnb2tzZW5saW96Z3VuMTJAZ21haWwuY29tIiwiYXV0aCI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNjQ1MDEyMjQxLCJleHAiOjE2NDUwMTUyNDF9.yqk0t51g0nVmbN1rMVdo1syRH4wl_Cl3p7crl4TDF-Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"g@gmail.com\",\r\n    \"firstName\": \"Özgün\",\r\n    \"lastName\": \"Gökşenli\",\r\n    \"address\": \"Maltepe\",\r\n    \"phone\": \"123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/customers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Order By Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/customers/orders/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customers",
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "New Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnb2tzZW5saW96Z3VuMTJAZ21haWwuY29tIiwiYXV0aCI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNjQ1MDEyMjQxLCJleHAiOjE2NDUwMTUyNDF9.yqk0t51g0nVmbN1rMVdo1syRH4wl_Cl3p7crl4TDF-Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 1,\r\n    \"orderAmount\": 59,\r\n    \"productOrderDetails\": [\r\n            {\r\n                \"id\": 1,\r\n                \"quantity\": 5\r\n            },\r\n            {\r\n                \"id\": 2,\r\n                \"quantity\": 11\r\n            }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnb2tzZW5saW96Z3VuMTJAZ21haWwuY29tIiwiYXV0aCI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNjQ1MDEyMjQxLCJleHAiOjE2NDUwMTUyNDF9.yqk0t51g0nVmbN1rMVdo1syRH4wl_Cl3p7crl4TDF-Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/order/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders By Interval",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnb2tzZW5saW96Z3VuMTJAZ21haWwuY29tIiwiYXV0aCI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNjQ1MDEyMjQxLCJleHAiOjE2NDUwMTUyNDF9.yqk0t51g0nVmbN1rMVdo1syRH4wl_Cl3p7crl4TDF-Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"20-11-2021 11:00:00\",\r\n    \"endDate\": \"20-11-2022 11:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistics",
+			"item": [
+				{
+					"name": "GetMontly",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/statistics/monthly/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"statistics",
+								"monthly",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
